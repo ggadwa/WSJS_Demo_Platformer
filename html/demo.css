@@ -1,0 +1,89 @@
+.header {
+    float:left;
+    width:100%;
+    height:42px;
+    background-color:#CCFFCC;
+    font-family:Arial;
+    font-size:24pt;
+    font-weight:bold;
+    white-space:nowrap;
+    padding:4px;
+    box-sizing:border-box;
+    text-align:center;
+}
+
+.imageWrapper {
+    float:left;
+    width:100%;
+    padding-top:4px;
+    padding-bottom:4px;
+    box-sizing:border-box;
+    background-color:#EEEEFF;
+    text-align:center;
+}
+
+.imageText {
+    font-family:Arial;
+    font-size:16pt;    
+}
+
+.imageClick {
+    cursor:pointer;
+    border:3px solid #000000;
+}
+
+.imageClick:hover {
+    border:3px solid #FF3333;
+}
+
+.line {
+    float:left;
+    width:100%;
+    background-color:#EEEEFF;
+    font-family:Arial;
+    font-size:14pt;
+    white-space:nowrap;
+    padding:4px;
+    box-sizing:border-box;
+}
+
+.keyTableWrapper {
+    width:100%;
+    border:1px solid #555555;
+    overflow:hidden;
+}
+
+.keyTable {
+    width:100%;
+    table-layout:fixed;
+    border-collapse:collapse;
+}
+
+.keyRow {
+    width:100%;
+    height:25px;
+    border-bottom:1px solid #555555;
+}
+
+.keyColumnLeft {
+    width:15%;
+    text-align:right;
+    padding-top:0px;
+    padding-bottom:0px;
+    padding-left:0px;
+    padding-right:5px;
+    background-color:#AAAAFF;
+    border-left:1px solid #AAAAAA;
+    border-right:1px solid #AAAAAA;
+}
+
+.keyColumnRight {
+    width:35%;
+    text-align:left;
+    padding-top:0px;
+    padding-bottom:0px;
+    padding-left:5px;
+    padding-right:0px;
+    background-color:#7777FF;
+    border-right:1px solid #AAAAAA;
+}
