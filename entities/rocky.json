@@ -15,7 +15,6 @@
     "config":
         {
             "walkSpeed":50,
-            "chaseSpeed":110,
             "turnSpeed":5,
             "initialWalkDirection":-1,
             "jumpHeight":0,
@@ -23,9 +22,12 @@
             "patrolDistance":8000,
             "stompable":false,
             "stompBounceHeight":1000,
+            "melee":true,
+            "meleeDistance":5500,
+            "meleeDamage":5,
+            "meleeHitFrame":2880,
             "shoveSpeed":1100,
             "shoveFadeFactor":0.9,
-            "shoveHitFrame":2880,
             "disappearShrinkFactor":0.97,
             "disappearEffectFrame":15,
             "disappearEffect":"flash"
@@ -43,6 +45,8 @@
     "sounds":
         {
             "hurtSound":null,
+            "stompSound":{"name":"rock_hit","rate":1,"randomRateAdd":0.1,"distance":30000,"loopStart":0,"loopEnd":0,"loop":false},
+            "meleeSound":{"name":"monster_attack","rate":1,"randomRateAdd":0.5,"distance":30000,"loopStart":0,"loopEnd":0,"loop":false},
             "dieSound":{"name":"chime","rate":0.8,"randomRateAdd":0,"distance":30000,"loopStart":0,"loopEnd":0,"loop":false}
         }
 }

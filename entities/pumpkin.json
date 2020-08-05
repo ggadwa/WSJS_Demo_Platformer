@@ -15,7 +15,6 @@
     "config":
         {
             "walkSpeed":100,
-            "chaseSpeed":110,
             "turnSpeed":10,
             "initialWalkDirection":-1,
             "jumpHeight":200,
@@ -23,9 +22,12 @@
             "patrolDistance":8000,
             "stompable":true,
             "stompBounceHeight":500,
+            "melee":true,
+            "meleeDistance":4500,
+            "meleeDamage":10,
+            "meleeHitFrame":2720,
             "shoveSpeed":0,
-            "shoveFadeFactor":0.9,
-            "shoveHitFrame":2880,
+            "shoveFadeFactor":0,
             "disappearShrinkFactor":0.97,
             "disappearEffectFrame":15,
             "disappearEffect":"flash"
@@ -43,6 +45,8 @@
     "sounds":
         {
             "hurtSound":null,
-            "dieSound":null
+            "stompSound":null,
+            "meleeSound":{"name":"monster_attack","rate":1,"randomRateAdd":0.5,"distance":30000,"loopStart":0,"loopEnd":0,"loop":false},
+            "dieSound":{"name":"pumpkin_splat","rate":1,"randomRateAdd":0.2,"distance":30000,"loopStart":0,"loopEnd":0,"loop":false}
         }
 }

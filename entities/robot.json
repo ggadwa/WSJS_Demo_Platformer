@@ -21,10 +21,15 @@
             "platformCameraDistance":15000,
             "platformCameraYUpMoveFactor":0.2,
             "platformCameraYDownMoveFactor":0.3,
-            "platformCameraJumpPause":true
+            "platformCameraJumpPause":true,
+            "interfaceCollectItem":"stars"
         },
     "interface":
         {
+            "counts":
+                [
+                    {"id":"stars","bitmap":"textures/star.png","count":10,"width":32,"height":32,"positionMode":"topLeft","positionOffset":{"x":5,"y":5},"addOffset":{"x":0,"y":32},"onColor":{"r":1,"g":1,"b":1},"onAlpha":1,"offColor":{"r":0.8,"g":0.8,"b":0.8},"offAlpha":0.7,"show":true}
+                ]
         },
     "animations":
         {
@@ -39,7 +44,9 @@
         },
     "sounds":
         {
-            "hurtSound":{"name":"chime","rate":0.5,"randomRateAdd":1.0,"distance":5000,"loopStart":0,"loopEnd":0,"loop":false},
+            "jumpSound":{"name":"robot_jump","rate":0.1,"randomRateAdd":1.0,"distance":30000,"loopStart":0,"loopEnd":0,"loop":false},
+            "landSound":{"name":"robot_land","rate":0.2,"randomRateAdd":1.0,"distance":30000,"loopStart":0,"loopEnd":0,"loop":false},
+            "hurtSound":{"name":"robot_hit","rate":0.2,"randomRateAdd":1.0,"distance":30000,"loopStart":0,"loopEnd":0,"loop":false},
             "dieSound":{"name":"chime","rate":0.8,"randomRateAdd":0,"distance":30000,"loopStart":0,"loopEnd":0,"loop":false}
         }
 }
