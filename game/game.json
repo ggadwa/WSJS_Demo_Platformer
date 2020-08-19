@@ -7,6 +7,9 @@
             "multiplayerMessageText":null,
             "multiplayerMessageWaitTick":0,
             "interfaceHitBitmap":null,
+            "sequenceStart":null,
+            "sequenceWin":null,
+            "sequenceLoss":null,
             "touchStickSize":256,
             "touchStickRingBitmap":"textures/stick_ring.png",
             "touchStickThumbBitmap":"textures/stick_thumb.png",
@@ -27,5 +30,8 @@
     "effects":
         [
             "flash"
+        ],
+    "sequences":
+        [
         ]
 }
