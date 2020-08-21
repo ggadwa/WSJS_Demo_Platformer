@@ -24,7 +24,7 @@
             "stompBounceHeight":1000,
             "melee":true,
             "meleeDistance":5500,
-            "meleeDamage":5,
+            "meleeDamage":1,
             "meleeHitFrame":2880,
             "shoveSpeed":1100,
             "shoveFadeFactor":0.9,

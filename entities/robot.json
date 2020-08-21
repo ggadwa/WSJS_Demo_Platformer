@@ -20,6 +20,9 @@
             "jumpHeight":1000,
             "healthInitialCount":4,
             "healthMaxCount":4,
+            "interfaceHealthBackground":"health_background",
+            "interfaceHealthBackgroundPulseSize":5,
+            "interfaceHealthBackgroundPulseTick":500,
             "interfaceHealthBitmapList":["health_1","health_2","health_3","health_4"],
             "platformCameraDistance":15000,
             "platformCameraYUpMoveFactor":0.2,
@@ -51,13 +54,13 @@
             "fallAnimation":[5410,5500],
             "hurtAnimation":[630,640],
             "shovedAnimation":[640,655],
-            "dieAnimation":[720,770]                
+            "dieAnimation":[720,765]                
         },
     "sounds":
         {
             "jumpSound":{"name":"robot_jump","rate":0.1,"randomRateAdd":1.0,"distance":30000,"loopStart":0,"loopEnd":0,"loop":false},
             "landSound":{"name":"robot_land","rate":0.2,"randomRateAdd":1.0,"distance":30000,"loopStart":0,"loopEnd":0,"loop":false},
-            "hurtSound":{"name":"robot_hit","rate":0.2,"randomRateAdd":1.0,"distance":30000,"loopStart":0,"loopEnd":0,"loop":false},
-            "dieSound":{"name":"chime","rate":0.8,"randomRateAdd":0,"distance":30000,"loopStart":0,"loopEnd":0,"loop":false}
+            "hurtSound":{"name":"robot_hit","rate":0.2,"randomRateAdd":1.0,"distance":50000,"loopStart":0,"loopEnd":0,"loop":false},
+            "dieSound":{"name":"robot_die","rate":1,"randomRateAdd":0,"distance":30000,"loopStart":0,"loopEnd":0,"loop":false}
         }
 }
