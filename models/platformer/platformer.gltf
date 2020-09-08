@@ -268,7 +268,8 @@
                 249,
                 250,
                 251,
-                252
+                252,
+                253
             ]
         }
     ],
@@ -581,7 +582,7 @@
                 3.30196213722229
             ],
             "translation" : [
-                -295.3776550292969,
+                -305.52850341796875,
                 4.780963897705078,
                 0.0320587158203125
             ]
@@ -609,7 +610,7 @@
                 3.30196213722229
             ],
             "translation" : [
-                -309.33709716796875,
+                -319.4879455566406,
                 4.6376471519470215,
                 -0.12393230199813843
             ]
@@ -4083,6 +4084,20 @@
                 1819.6865234375,
                 29.95454978942871,
                 -10.066110610961914
+            ]
+        },
+        {
+            "mesh" : 253,
+            "name" : "MusicDef",
+            "scale" : [
+                3.30196213722229,
+                3.30196213722229,
+                3.30196213722229
+            ],
+            "translation" : [
+                -291.9940490722656,
+                4.780963897705078,
+                0.0320587158203125
             ]
         }
     ],
@@ -7973,6 +7988,23 @@
                     },
                     "indices" : 19,
                     "material" : 4
+                }
+            ]
+        },
+        {
+            "extras" : {
+                "wsjsMusic" : "{\"name\":\"billy\",\"loopStart\":0,\"loopEnd\":0}"
+            },
+            "name" : "MusicDef",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 767,
+                        "NORMAL" : 768,
+                        "TEXCOORD_0" : 769
+                    },
+                    "indices" : 69,
+                    "material" : 5
                 }
             ]
         }
@@ -15161,6 +15193,34 @@
             "componentType" : 5126,
             "count" : 178,
             "type" : "VEC2"
+        },
+        {
+            "bufferView" : 767,
+            "componentType" : 5126,
+            "count" : 24,
+            "max" : [
+                1,
+                1,
+                1
+            ],
+            "min" : [
+                -1,
+                -1,
+                -1
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 768,
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 769,
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC2"
         }
     ],
     "bufferViews" : [
@@ -18998,11 +19058,26 @@
             "buffer" : 0,
             "byteLength" : 1424,
             "byteOffset" : 1373768
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 288,
+            "byteOffset" : 1375192
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 288,
+            "byteOffset" : 1375480
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 192,
+            "byteOffset" : 1375768
         }
     ],
     "buffers" : [
         {
-            "byteLength" : 1375192,
+            "byteLength" : 1375960,
             "uri" : "platformer.bin"
         }
     ]
