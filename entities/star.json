@@ -12,6 +12,14 @@
             "weight":100,
             "hideMeshes":[]
         },
+    "physics":
+        {
+            "maxBumpCount":0,
+            "floorRiseHeight":2000,
+            "collisionSpokeCount":8,
+            "collisionHeightSegmentCount":2,
+            "collisionHeightMargin":10
+        },
     "config":
         {
             "hideTick":5000,
