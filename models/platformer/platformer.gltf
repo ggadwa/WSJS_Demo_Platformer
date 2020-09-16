@@ -7993,7 +7993,7 @@
         },
         {
             "extras" : {
-                "wsjsMusic" : "{\"name\":\"billy\",\"loopStart\":0,\"loopEnd\":0}"
+                "wsjsMusic" : "{\"name\":\"billy\",\"loopStart\":0,\"loopEnd\":32}"
             },
             "name" : "MusicDef",
             "primitives" : [

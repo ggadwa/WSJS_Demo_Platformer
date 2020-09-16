@@ -60,9 +60,10 @@
             "runAnimation":[290,310],
             "jumpAnimation":[627,628],
             "fallAnimation":[5410,5500],
+            "danceAnimation":[5100,5200],
             "hurtAnimation":[630,640],
             "shovedAnimation":[640,655],
-            "dieAnimation":[720,765]                
+            "dieAnimation":[720,765]
         },
     "sounds":
         {
