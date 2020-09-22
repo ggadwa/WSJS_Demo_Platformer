@@ -1,0 +1,7 @@
+{
+    "lifeTick":5000,
+    "freezePlayer":[0,5000],
+    "freezeAI":null,
+    "hideUI":false,
+    "exitLevel":true
+}

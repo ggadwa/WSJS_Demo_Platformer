@@ -1,17 +1,17 @@
 {
-    "lifeTick":2000,
-    "freezePlayer":[0,2000],
+    "lifeTick":1000,
+    "freezePlayer":[0,1000],
     "freezeAI":null,
     "hideUI":false,
+    "exitLevel":false,
     "entities":
         [
             {
-                "entity":"textures/ready.png",
-                "events":
+                "entity":"player",
+                "frames":
                     [
-                        {"tick":0,"animation":[5100,5200]},
-                        {"tick":0,"scale":{"x":0.1,"y":1.0,"z":0.1}},
-                        {"tick":2000,"scale":{"x":1.0,"y":1.0,"z":1.0}},
+                        {"tick":0,"startAnimation":[5100,5200],"startEffect":{"name":"warp","positionOffset":{"x":0,"y":0,"z":0}},"positionOffset":{"x":0,"y":0,"z":0},"angleOffset":{"x":0,"y":0,"z":0},"scale":{"x":0.1,"y":0.1,"z":0.1}},
+                        {"tick":1000,"positionOffset":{"x":0,"y":0,"z":0},"angleOffset":{"x":0,"y":360,"z":0},"scale":{"x":1.0,"y":1.0,"z":1.0}}
                     ]
             }
         ]

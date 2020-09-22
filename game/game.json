@@ -7,9 +7,9 @@
             "multiplayerMessageText":null,
             "multiplayerMessageWaitTick":0,
             "interfaceHitBitmap":null,
-            "sequenceStart":null,
-            "sequenceWin":null,
-            "sequenceLoss":null,
+            "sequenceStart":"warp_in",
+            "sequenceWon":"warp_out",
+            "sequenceLost":"lost",
             "touchStickSize":256,
             "touchStickRingBitmap":"textures/stick_ring.png",
             "touchStickThumbBitmap":"textures/stick_thumb.png",
@@ -29,9 +29,10 @@
         ],
     "effects":
         [
-            "flash"
+            "flash","warp"
         ],
     "sequences":
         [
+            "warp_in","warp_out","lost"
         ]
 }
