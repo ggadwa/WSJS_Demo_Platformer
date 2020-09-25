@@ -2,6 +2,10 @@
     "name":"wsjs_demo_platformer",
     "developer":true,
     "startMap":"platformer",
+    "title":
+        {
+            "bitmap":"textures/title.png"
+        },
     "config":
         {
             "multiplayerMessageText":null,

@@ -3,12 +3,9 @@
 <html>
 
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <title>WSJS Platformer Demonstration</title>
-<link rel="stylesheet" type="text/css" href="demo.css">
 <link rel="stylesheet" type="text/css" href="../../code/html/common.css">
-
-<!-- the script -->
 
 <script type="module">
     import main from '../../code/main/main.js';
@@ -16,76 +13,12 @@
     window.main=main;
 </script>
 
-<script>
-function run()
-{
-    window.main.run(false,{});
-}
-</script>
-
 </head>
 
 <body>
-
-<!-- start -->
-
-<div class="header">WSJS Platformer Demonstration</div>
-
-<div class="line"></div>
-
-<div class="imageWrapper">
-    <img class="imageClick" src="platformer.png" onClick="run()" alt="Click to Play">
-</div>
-
-<!-- controls -->
-
-<div class="header">Controls</div>
-
-<div class="line"></div>
-    
-<div class="keyTableWrapper">
-    <table class="keyTable">
-        <tr class="keyRow">
-            <td class="keyColumnLeft">Esc</td>
-            <td class="keyColumnRight">Pause</td>
-            <td class="keyColumnLeft">Touch Lower Left</td>
-            <td class="keyColumnRight">Move</td>
-        </tr>
-        <tr class="keyRow">
-            <td class="keyColumnLeft">AD</td>
-            <td class="keyColumnRight">Movement</td>
-            <td class="keyColumnLeft">Touch Lower Right</td>
-            <td class="keyColumnRight">Jump</td>
-        </tr>
-        <tr class="keyRow">
-            <td class="keyColumnLeft">Shift</td>
-            <td class="keyColumnRight">Run</td>
-            <td class="keyColumnLeft">F9</td>
-            <td class="keyColumnRight">Developer Mode</td>
-        </tr>
-        <tr class="keyRow">
-            <td class="keyColumnLeft">Space</td>
-            <td class="keyColumnRight">Jump</td>
-            <td class="keyColumnLeft"></td>
-            <td class="keyColumnRight"></td>
-        </tr>
-    </table>
-</div>
-
-<div class="line"></div>
-
-<!-- links -->
-
-<div class="header">Links</div>
-
-<div class="line">
-    <a href="../../demo/html/index.html">FPS Demonstration</a><br>
-    <a href="../../demo_kart/html/index.html">Kart Demonstration</a><br>
-    <a href="https://github.com/ggadwa/WSJS">GitHub Engine Source Code</a><br>
-    <a href="https://github.com/ggadwa/WSJS_Demo_Platformer">GitHub Platformer Demo Source Code</a><br>
-    <a href="https://twitter.com/ggadwa">@ggadwa</a><br>
-    <div>Check credits.txt in the demo source code for credits</div>
-</div>
-
+    <div style="font-family:Arial;font-size:18pt;font-style:underline;cursor:pointer" onmouseover="this.style.color='#FF0000'" onmouseout="this.style.color='#000000'" onclick="window.main.run({})">
+        Click to Run
+    </div>
 </body>
+
 </html>
