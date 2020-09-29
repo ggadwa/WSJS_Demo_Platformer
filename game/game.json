@@ -4,7 +4,6 @@
     "startMap":"platformer",
     "title":
         {
-            "bitmap":"textures/title.png"
         },
     "config":
         {
