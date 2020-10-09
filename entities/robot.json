@@ -36,7 +36,9 @@
             "platformCameraYUpMoveFactor":0.2,
             "platformCameraYDownMoveFactor":0.3,
             "platformCameraJumpPause":true,
-            "interfaceCollectItem":"stars"
+            "interfaceCollectItem":"stars",
+            "hitIndicator":true,
+            "hitIndicatorFlashTick":500
         },
     "interface":
         {

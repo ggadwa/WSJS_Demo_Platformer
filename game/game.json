@@ -9,16 +9,12 @@
         {
             "multiplayerMessageText":null,
             "multiplayerMessageWaitTick":0,
-            "interfaceHitBitmap":null,
             "sequenceStart":"warp_in",
             "sequenceWon":"warp_out",
             "sequenceLost":"lost",
             "touchStickSize":256,
-            "touchStickRingBitmap":"textures/stick_ring.png",
-            "touchStickThumbBitmap":"textures/stick_thumb.png",
             "touchButtonSize":48,
-            "touchMenuPosition":[10,10],
-            "touchMenuBitmap":"textures/menu.png"
+            "touchMenuPosition":[10,10]
         },
     "interface":
         {
