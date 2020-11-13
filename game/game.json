@@ -2,8 +2,12 @@
     "name":"wsjs_demo_platformer",
     "developer":true,
     "startMap":"platformer",
+    "multiplayerMaps":null,
     "title":
         {
+            "playButton":{"title":"Play","x":0.75,"y":0.77,"width":0.24,"height":0.1},
+            "multiplayerButton":{"title":"Multiplayer","x":0,"y":0,"width":0,"height":0,"show":false},
+            "setupButton":{"title":"Setup","x":0.75,"y":0.88,"width":0.24,"height":0.1,"show":true}
         },
     "config":
         {
