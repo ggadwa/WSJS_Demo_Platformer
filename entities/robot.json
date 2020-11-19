@@ -40,21 +40,6 @@
             "hitIndicator":true,
             "hitIndicatorFlashTick":500
         },
-    "interface":
-        {
-            "elements":
-                [
-                    {"id":"health_background","bitmap":"textures/health_background.png","width":128,"height":128,"positionMode":"bottomRight","positionOffset":{"x":-133,"y":-133},"color":{"r":1,"g":1,"b":1},"alpha":1.0,"show":true},
-                    {"id":"health_4","bitmap":"textures/health_4.png","width":128,"height":128,"positionMode":"bottomRight","positionOffset":{"x":-133,"y":-133},"color":{"r":1,"g":1,"b":1},"alpha":1.0,"show":true},
-                    {"id":"health_3","bitmap":"textures/health_3.png","width":128,"height":128,"positionMode":"bottomRight","positionOffset":{"x":-133,"y":-133},"color":{"r":1,"g":1,"b":1},"alpha":1.0,"show":false},
-                    {"id":"health_2","bitmap":"textures/health_2.png","width":128,"height":128,"positionMode":"bottomRight","positionOffset":{"x":-133,"y":-133},"color":{"r":1,"g":1,"b":1},"alpha":1.0,"show":false},
-                    {"id":"health_1","bitmap":"textures/health_1.png","width":128,"height":128,"positionMode":"bottomRight","positionOffset":{"x":-133,"y":-133},"color":{"r":1,"g":1,"b":1},"alpha":1.0,"show":false}
-                ],
-            "counts":
-                [
-                    {"id":"stars","bitmap":"textures/star.png","count":10,"width":32,"height":32,"positionMode":"topLeft","positionOffset":{"x":5,"y":5},"addOffset":{"x":0,"y":32},"onColor":{"r":1,"g":1,"b":1},"onAlpha":1,"offColor":{"r":0.8,"g":0.8,"b":0.8},"offAlpha":0.5,"show":true}
-                ]
-        },
     "animations":
         {
             "idleAnimation":[1830,1930],

@@ -40,9 +40,6 @@
             "disappearEffectFrame":15,
             "disappearEffect":"flash"
         },
-    "interface":
-        {
-        },
     "animations":
         {
             "idleAnimation":[910,1110],
