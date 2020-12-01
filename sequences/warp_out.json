@@ -3,7 +3,8 @@
     "freezePlayer":[0,5000],
     "freezeAI":null,
     "hideUI":false,
-    "exitLevel":true,
+    "switchMap":"platformer",
+    "exitGame":false,
     "entities":
         [
             {

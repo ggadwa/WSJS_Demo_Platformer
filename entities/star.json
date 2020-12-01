@@ -31,7 +31,7 @@
             "randomPositionOffset":{"x":0,"y":0,"z":0},
             "actions":
                 [
-                    {"action":"addWinCollect","winCount":10}
+                    {"action":"addWinCollect","winCount":2}
                 ]
         },
     "animations":
