@@ -7,15 +7,15 @@
 <title>WSJS Platformer Demonstration</title>
 
 <script type="module">
-    import main from '../../code/main/main.js';
+    import CoreClass from '../../code/main/core.js';
     
-    window.main=main;
+    window.core=new CoreClass();
 </script>
 
 </head>
 
 <body>
-    <div style="font-family:Arial;font-size:18pt;font-style:underline;cursor:pointer" onmouseover="this.style.color='#FF0000'" onmouseout="this.style.color='#000000'" onclick="window.main.run({})">
+    <div style="font-family:Arial;font-size:18pt;font-style:underline;cursor:pointer" onmouseover="this.style.color='#FF0000'" onmouseout="this.style.color='#000000'" onclick="window.core.run({})">
         Click to Run
     </div>
 </body>
