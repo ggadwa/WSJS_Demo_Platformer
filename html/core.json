@@ -28,7 +28,9 @@
                 ],
             "touchStickSize":256,
             "touchButtonSize":48,
-            "touchMenuPosition":[0.01,0.92]
+            "touchMenuPosition":[0.01,0.92],
+            "touchShowLeftStick":true,
+            "touchShowRightStick":false
         },
     "interface":
         {
