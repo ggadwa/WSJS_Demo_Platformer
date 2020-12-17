@@ -1,8 +1,9 @@
 {
-    "lifeTick":5000,
-    "freezePlayer":[0,5000],
+    "lifeTick":11000,
+    "freezePlayer":[0,11000],
     "freezeAI":null,
     "hideUI":false,
+    "music":{"name":"lost","autoStop":true},
     "switchMap":null,
     "exitGame":true
 }

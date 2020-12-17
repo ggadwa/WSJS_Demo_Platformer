@@ -1,8 +1,9 @@
 {
-    "lifeTick":5000,
-    "freezePlayer":[0,5000],
+    "lifeTick":8500,
+    "freezePlayer":[0,8500],
     "freezeAI":null,
     "hideUI":false,
+    "music":{"name":"won","autoStop":true},
     "switchMap":"platformer",
     "exitGame":false,
     "entities":
@@ -12,8 +13,8 @@
                 "frames":
                     [
                         {"tick":0,"startAnimation":[5100,5200],"positionOffset":{"x":0,"y":0,"z":0},"angleOffset":{"x":0,"y":0,"z":0},"scale":{"x":1.0,"y":1.0,"z":1.0}},
-                        {"tick":4000,"startEffect":{"name":"warp","positionOffset":{"x":0,"y":0,"z":0}},"positionOffset":{"x":0,"y":0,"z":0},"angleOffset":{"x":0,"y":0,"z":0},"scale":{"x":1.0,"y":1.0,"z":1.0}},
-                        {"tick":5000,"positionOffset":{"x":0,"y":0,"z":0},"angleOffset":{"x":0,"y":360,"z":0},"scale":{"x":0.1,"y":0.1,"z":0.1}}
+                        {"tick":7500,"startEffect":{"name":"warp","positionOffset":{"x":0,"y":0,"z":0}},"positionOffset":{"x":0,"y":0,"z":0},"angleOffset":{"x":0,"y":0,"z":0},"scale":{"x":1.0,"y":1.0,"z":1.0}},
+                        {"tick":8500,"positionOffset":{"x":0,"y":0,"z":0},"angleOffset":{"x":0,"y":360,"z":0},"scale":{"x":0.1,"y":0.1,"z":0.1}}
                     ]
             }
         ]
