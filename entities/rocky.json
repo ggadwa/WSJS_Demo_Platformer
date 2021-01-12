@@ -27,6 +27,7 @@
             "initialWalkDirection":-1,
             "jumpHeight":0,
             "jumpWaitTick":2000,
+            "jumpWaitTickRandomAdd":100,
             "patrolDistance":8000,
             "stompable":false,
             "stompBounceHeight":1000,
