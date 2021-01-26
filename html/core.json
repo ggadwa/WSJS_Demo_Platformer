@@ -52,8 +52,8 @@
                 ]
         },
     "characters":
-        {
-        },
+        [
+        ],
     "entities":
         [
             "robot","pumpkin","rocky","star"
