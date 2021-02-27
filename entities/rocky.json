@@ -43,10 +43,10 @@
         },
     "animations":
         {
-            "idleAnimation":[910,1110],
-            "walkAnimation":[80,110],
-            "hitAnimation":[2870,2890],
-            "dieAnimation":[2750,2790]                
+            "idleAnimation":{"startFrame":910,"endFrame":1110},
+            "walkAnimation":{"startFrame":80,"endFrame":110},
+            "hitAnimation":{"startFrame":2870,"endFrame":2890},
+            "dieAnimation":{"startFrame":2750,"endFrame":2790}                
         },
     "sounds":
         {

@@ -42,15 +42,15 @@
         },
     "animations":
         {
-            "idleAnimation":[1830,1930],
-            "walkAnimation":[80,110],
-            "runAnimation":[290,310],
-            "jumpAnimation":[627,628],
-            "fallAnimation":[5410,5500],
-            "danceAnimation":[5100,5200],
-            "hurtAnimation":[630,640],
-            "shovedAnimation":[640,655],
-            "dieAnimation":[720,765]
+            "idleAnimation":{"startFrame":1830,"endFrame":1930},
+            "walkAnimation":{"startFrame":80,"endFrame":110},
+            "runAnimation":{"startFrame":290,"endFrame":310},
+            "jumpAnimation":{"startFrame":627,"endFrame":628},
+            "fallAnimation":{"startFrame":5410,"endFrame":5500},
+            "danceAnimation":{"startFrame":5100,"endFrame":5200},
+            "hurtAnimation":{"startFrame":630,"endFrame":640},
+            "shovedAnimation":{"startFrame":640,"endFrame":655},
+            "dieAnimation":{"startFrame":720,"endFrame":765}
         },
     "sounds":
         {
