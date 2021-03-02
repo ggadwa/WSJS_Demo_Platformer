@@ -34,19 +34,49 @@
             "melee":true,
             "meleeDistance":5500,
             "meleeDamage":1,
-            "meleeHitFrame":2880,
             "shoveSpeed":1100,
             "shoveFadeFactor":0.9,
             "disappearShrinkFactor":0.97,
-            "disappearEffectFrame":15,
             "disappearEffect":"flash"
         },
     "animations":
         {
-            "idleAnimation":{"startFrame":910,"endFrame":1110},
-            "walkAnimation":{"startFrame":80,"endFrame":110},
-            "hitAnimation":{"startFrame":2870,"endFrame":2890},
-            "dieAnimation":{"startFrame":2750,"endFrame":2790}                
+            "idleAnimation":
+                {
+                    "startFrame":910,
+                    "endFrame":1110,
+                    "actionFrame":0,
+                    "meshes":
+                        [
+                        ]
+                },
+            "walkAnimation":
+                {
+                    "startFrame":80,
+                    "endFrame":110,
+                    "actionFrame":0,
+                    "meshes":
+                        [
+                        ]
+                },
+            "hitAnimation":
+                {
+                    "startFrame":2870,
+                    "endFrame":2890,
+                    "actionFrame":2880,
+                    "meshes":
+                        [
+                        ]
+                },
+            "dieAnimation":
+                {
+                    "startFrame":2750,
+                    "endFrame":2790,
+                    "actionFrame":2755,
+                    "meshes":
+                        [
+                        ]
+                }                
         },
     "sounds":
         {

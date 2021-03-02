@@ -12,7 +12,7 @@
                 "entity":"player",
                 "frames":
                     [
-                        {"tick":0,"startAnimation":[5100,5200],"positionOffset":{"x":0,"y":0,"z":0},"angleOffset":{"x":0,"y":0,"z":0},"scale":{"x":1.0,"y":1.0,"z":1.0}},
+                        {"tick":0,"startAnimation":{"startFrame":5100,"endFrame":5200,"actionFrame":0,"meshes":[]},"positionOffset":{"x":0,"y":0,"z":0},"angleOffset":{"x":0,"y":0,"z":0},"scale":{"x":1.0,"y":1.0,"z":1.0}},
                         {"tick":7500,"startEffect":{"name":"warp","positionOffset":{"x":0,"y":0,"z":0}},"positionOffset":{"x":0,"y":0,"z":0},"angleOffset":{"x":0,"y":0,"z":0},"scale":{"x":1.0,"y":1.0,"z":1.0}},
                         {"tick":8500,"positionOffset":{"x":0,"y":0,"z":0},"angleOffset":{"x":0,"y":360,"z":0},"scale":{"x":0.1,"y":0.1,"z":0.1}}
                     ]
