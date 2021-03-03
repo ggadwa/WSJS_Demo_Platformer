@@ -47,81 +47,63 @@
                     "startFrame":1830,
                     "endFrame":1930,
                     "actionFrame":0,
-                    "meshes":
-                        [
-                        ]
+                    "meshes":null
                 },
             "walkAnimation":
                 {
                     "startFrame":80,
                     "endFrame":110,
                     "actionFrame":0,
-                    "meshes":
-                        [
-                        ]
+                    "meshes":null
                 },
             "runAnimation":
                 {
                     "startFrame":290,
                     "endFrame":310,
                     "actionFrame":0,
-                    "meshes":
-                        [
-                        ]
+                    "meshes":null
                 },
             "jumpAnimation":
                 {
                     "startFrame":627,
                     "endFrame":628,
                     "actionFrame":0,
-                    "meshes":
-                        [
-                        ]
+                    "meshes":null
                 },
             "fallAnimation":
                 {
                     "startFrame":5410,
                     "endFrame":5500,
                     "actionFrame":0,
-                    "meshes":
-                        [
-                        ]
+                    "meshes":null
                 },
             "danceAnimation":
                 {
                     "startFrame":5100,
                     "endFrame":5200,
                     "actionFrame":0,
-                    "meshes":
-                        [
-                        ]
+                    "meshes":null
                 },
             "hurtAnimation":
                 {
                     "startFrame":630,
                     "endFrame":640,
                     "actionFrame":0,
-                    "meshes":
-                        [
-                        ]
+                    "meshes":null
                 },
             "shovedAnimation":
                 {
                     "startFrame":640,
                     "endFrame":655,
                     "actionFrame":0,
-                    "meshes":
-                        [
-                        ]
+                    "meshes":null
                 },
             "dieAnimation":
                 {
                     "startFrame":720,
                     "endFrame":765,
                     "actionFrame":0,
-                    "meshes":
-                        [
-                        ]
+                    "meshes":null
                 }
         },
     "sounds":

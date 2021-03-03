@@ -46,36 +46,28 @@
                     "startFrame":910,
                     "endFrame":1110,
                     "actionFrame":0,
-                    "meshes":
-                        [
-                        ]
+                    "meshes":null
                 },
             "walkAnimation":
                 {
                     "startFrame":80,
                     "endFrame":110,
                     "actionFrame":0,
-                    "meshes":
-                        [
-                        ]
+                    "meshes":null
                 },
             "hitAnimation":
                 {
                     "startFrame":2870,
                     "endFrame":2890,
                     "actionFrame":2880,
-                    "meshes":
-                        [
-                        ]
+                    "meshes":null
                 },
             "dieAnimation":
                 {
                     "startFrame":2750,
                     "endFrame":2790,
                     "actionFrame":2755,
-                    "meshes":
-                        [
-                        ]
+                    "meshes":null
                 }                
         },
     "sounds":
