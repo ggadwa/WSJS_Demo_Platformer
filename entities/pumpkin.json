@@ -18,7 +18,8 @@
             "floorRiseHeight":2000,
             "collisionSpokeCount":24,
             "collisionHeightSegmentCount":4,
-            "collisionHeightMargin":10
+            "collisionHeightMargin":10,
+            "canBeClimbed":false
         },
     "config":
         {
