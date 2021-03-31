@@ -2,12 +2,24 @@ import ProjectClass from '../../../code/main/project.js';
 import KillClass from '../cubes/kill.js';
 import StarClass from '../entities/star.js';
 import RobotClass from '../entities/robot.js';
+import PumpkinClass from '../entities/pumpkin.js';
+import RockyClass from '../entities/rocky.js';
 
 export default class DemoClass extends ProjectClass
 {
-    mapCube(name)
+    mapModels(mapName,singlePlayer)
     {
-        switch (name) {
+        return(['pumpkin','robot','rocky','star']);
+    }
+    
+    mapSounds(mapName,singlePlayer)
+    {
+        return(['chime','monster_attack','pickup','pumpkin_splat','robot_die','robot_hit','robot_jump','robot_land','rock_hit','teleport']);
+    }
+    
+    mapCube(mapName,cubeName)
+    {
+        switch (cubeName) {
             case 'kill':
                 return(KillClass);
         }
@@ -15,18 +27,22 @@ export default class DemoClass extends ProjectClass
         return(null);
     }
     
-    mapEffect(name)
+    mapEffect(mapName,effectName)
     {
         return(null);
     }
 
-    mapEntity(name)
+    mapEntity(mapName,entityName)
     {
-        switch (name) {
+        switch (entityName) {
             case 'star':
                 return(StarClass);
             case 'robot':
                 return(RobotClass);
+            case 'pumpkin':
+                return(PumpkinClass);
+            case 'rocky':
+                return(RockyClass);
         }
         
         return(null);

@@ -5,37 +5,32 @@ export default class RobotClass extends EntityClass
 {
     constructor(core,name,jsonName,position,angle,data,mapSpawn,spawnedBy,heldBy,show)
     {
-        super(core,name,jsonName,position,angle,data,mapSpawn,spawnedBy,heldBy,show);
+        super(core,name,null,position,angle,data,mapSpawn,spawnedBy,heldBy,show);
         
+            // this is the player entity
+            
         this.isPlayer=true;
+        
+            // model
+            
+        this.modelName='robot';
+        this.frameRate=30;
+        this.rotationOrder=this.MODEL_ROTATION_ORDER_XYZ;
+        this.scale.setFromValues(5000,5000,5000);
+        this.radius=1500;
+        this.height=4500;
+        this.eyeOffset=4400;
+        this.weight=400;
+        this.modelHideMeshes=null;
 
-        this.healthInitialCount=0;
-        this.healthMaxCount=0;
-        this.interfaceHealthBackground=null;
-        this.interfaceHealthBackgroundPulseSize=0;
-        this.interfaceHealthBackgroundPulseTick=0;
-        this.interfaceHealthBitmapList=null;
-        
-        this.platformCameraDistance=0;
-        this.platformCameraYUpMoveFactor=1;
-        this.platformCameraYDownMoveFactor=1;
-        this.platformCameraJumpPause=false;
-        
-        this.interfaceCollectItem=null;
-        
-        this.idleAnimation={"startFrame":1830,"endFrame":1930,"actionFrame":0,"meshes":null};
-        this.walkAnimation={"startFrame":80,"endFrame":110,"actionFrame":0,"meshes":null};
-        this.runAnimation={"startFrame":290,"endFrame":310,"actionFrame":0,"meshes":null};
-        this.jumpAnimation={"startFrame":627,"endFrame":628,"actionFrame":0,"meshes":null};
-        this.fallAnimation={"startFrame":5410,"endFrame":5500,"actionFrame":0,"meshes":null};
-        this.hurtAnimation={"startFrame":630,"endFrame":640,"actionFrame":0,"meshes":null};
-        this.shovedAnimation={"startFrame":640,"endFrame":655,"actionFrame":0,"meshes":null};
-        this.dieAnimation={"startFrame":720,"endFrame":765,"actionFrame":0,"meshes":null};
-        
-        this.jumpSound={"name":"robot_jump","rate":0.1,"randomRateAdd":1.0,"distance":30000,"loopStart":0,"loopEnd":0,"loop":false};
-        this.landSound={"name":"robot_land","rate":0.2,"randomRateAdd":1.0,"distance":30000,"loopStart":0,"loopEnd":0,"loop":false};
-        this.hurtSound={"name":"robot_hit","rate":0.2,"randomRateAdd":1.0,"distance":50000,"loopStart":0,"loopEnd":0,"loop":false};
-        this.dieSound={"name":"robot_die","rate":1,"randomRateAdd":0,"distance":30000,"loopStart":0,"loopEnd":0,"loop":false};
+            // physics
+            
+        this.maxBumpCount=2;
+        this.floorRiseHeight=2000;
+        this.collisionSpokeCount=24;
+        this.collisionHeightSegmentCount=4;
+        this.collisionHeightMargin=10;
+        this.canBeClimbed=false;
         
             // variables
             
@@ -51,10 +46,25 @@ export default class RobotClass extends EntityClass
         
         this.collectItemCount=0;
         
-        this.hitIndicator=false;
-        this.hitIndicatorFlashTick=0;
-        
         this.animationFinishTick=0;
+        
+            // some constants
+            
+        this.interfaceHealthBitmapList=["health_1","health_2","health_3","health_4"];
+        
+        this.idleAnimation={"startFrame":1830,"endFrame":1930,"actionFrame":0,"meshes":null};
+        this.walkAnimation={"startFrame":80,"endFrame":110,"actionFrame":0,"meshes":null};
+        this.runAnimation={"startFrame":290,"endFrame":310,"actionFrame":0,"meshes":null};
+        this.jumpAnimation={"startFrame":627,"endFrame":628,"actionFrame":0,"meshes":null};
+        this.fallAnimation={"startFrame":5410,"endFrame":5500,"actionFrame":0,"meshes":null};
+        this.hurtAnimation={"startFrame":630,"endFrame":640,"actionFrame":0,"meshes":null};
+        this.shovedAnimation={"startFrame":640,"endFrame":655,"actionFrame":0,"meshes":null};
+        this.dieAnimation={"startFrame":720,"endFrame":765,"actionFrame":0,"meshes":null};
+        
+        this.jumpSound={"name":"robot_jump","rate":0.1,"randomRateAdd":1.0,"distance":30000,"loopStart":0,"loopEnd":0,"loop":false};
+        this.landSound={"name":"robot_land","rate":0.2,"randomRateAdd":1.0,"distance":30000,"loopStart":0,"loopEnd":0,"loop":false};
+        this.hurtSound={"name":"robot_hit","rate":0.2,"randomRateAdd":1.0,"distance":50000,"loopStart":0,"loopEnd":0,"loop":false};
+        this.dieSound={"name":"robot_die","rate":1,"randomRateAdd":0,"distance":30000,"loopStart":0,"loopEnd":0,"loop":false};
 
             // pre-allocates
             
@@ -64,32 +74,6 @@ export default class RobotClass extends EntityClass
         Object.seal(this);
     }
     
-    initialize()
-    {
-        if (!super.initialize()) return(false);
-        
-
-        
-        this.healthInitialCount=this.core.game.lookupValue(this.json.config.healthInitialCount,this.data,1);
-        this.healthMaxCount=this.core.game.lookupValue(this.json.config.healthMaxCount,this.data,1);
-        this.interfaceHealthBackground=this.core.game.lookupValue(this.json.config.interfaceHealthBackground,this.data,null);
-        this.interfaceHealthBackgroundPulseSize=this.core.game.lookupValue(this.json.config.interfaceHealthBackgroundPulseSize,this.data,0);
-        this.interfaceHealthBackgroundPulseTick=this.core.game.lookupValue(this.json.config.interfaceHealthBackgroundPulseTick,this.data,0);
-        this.interfaceHealthBitmapList=(this.json.config.interfaceHealthBitmapList===undefined)?null:this.json.config.interfaceHealthBitmapList;
-        
-        this.platformCameraDistance=this.core.game.lookupValue(this.json.config.platformCameraDistance,this.data,0);
-        this.platformCameraYUpMoveFactor=this.core.game.lookupValue(this.json.config.platformCameraYUpMoveFactor,this.data,1);
-        this.platformCameraYDownMoveFactor=this.core.game.lookupValue(this.json.config.platformCameraYDownMoveFactor,this.data,1);
-        this.platformCameraJumpPause=this.core.game.lookupValue(this.json.config.platformCameraJumpPause,this.data,false);
-        
-        this.interfaceCollectItem=this.core.game.lookupValue(this.json.config.interfaceCollectItem,this.data,null);
-        
-        this.hitIndicator=this.core.game.lookupValue(this.json.config.hitIndicator,this.data,null);
-        this.hitIndicatorFlashTick=this.core.game.lookupValue(this.json.config.hitIndicatorFlashTick,this.data,0);
-        
-        return(true);
-    }
-    
     ready()
     {
         super.ready();
@@ -97,7 +81,7 @@ export default class RobotClass extends EntityClass
         this.movement.setFromValues(0,0,0);
         this.drawAngle.setFromValues(0,0,0);
         
-        this.health=this.healthInitialCount;
+        this.health=4;
         
         this.currentCameraY=this.position.y;
         this.inJumpCameraPause=false;
@@ -111,9 +95,15 @@ export default class RobotClass extends EntityClass
         
         this.animationFinishTick=0;
         
-        this.cameraGotoPlatform(this.platformCameraDistance,this.platformCameraYUpMoveFactor,this.platformCameraYDownMoveFactor);
+        this.cameraGotoPlatform(15000,0.2,0.3);
         
         this.startAnimation(this.idleAnimation);
+    }
+    
+    addHealth(count)
+    {
+        this.health+=count;
+        if (this.health>4) this.health=4;
     }
     
     die()
@@ -136,15 +126,12 @@ export default class RobotClass extends EntityClass
         
             // hit indicator
             
-        if (this.hitIndicator) this.hitFlashAll(this.hitIndicatorFlashTick);
+        this.hitFlashAll(500);
         
             // take damage
             
         this.health-=damage;
-        
-        if ((this.interfaceHealthBackground!==null) && (this.interfaceHealthBackgroundPulseSize!==0) && (this.interfaceHealthBackgroundPulseTick!==0)) {
-            this.pulseElement(this.interfaceHealthBackground,this.interfaceHealthBackgroundPulseTick,this.interfaceHealthBackgroundPulseSize);
-        }
+        this.pulseElement('interfaceHealthBackground',500,5);
         
         if (this.health>0) {
             this.interuptAnimation(this.hurtAnimation);
@@ -183,12 +170,10 @@ export default class RobotClass extends EntityClass
         
             // interface updates
             
-        if (this.interfaceCollectItem!==null) this.setCount(this.interfaceCollectItem,this.collectItemCount);
+        this.setCount('stars',this.collectItemCount);
         
-        if (this.interfaceHealthBitmapList!==null) {
-            for (n=0;n!==this.interfaceHealthBitmapList.length;n++) {
-                this.showElement(this.interfaceHealthBitmapList[n],((n+1)===this.health));
-            }
+        for (n=0;n!==this.interfaceHealthBitmapList.length;n++) {
+            this.showElement(this.interfaceHealthBitmapList[n],((n+1)===this.health));
         }
         
             // freezes
@@ -259,7 +244,7 @@ export default class RobotClass extends EntityClass
 
         if (((this.isKeyDown(' ')) || (this.isTouchStickRightDown())) && ((this.standOnMeshIdx!==-1) || (this.standOnEntity!==null))) {
             this.movement.y=1000;
-            this.inJumpCameraPause=this.platformCameraJumpPause;
+            this.inJumpCameraPause=true;
             this.startAnimation(this.jumpAnimation);
             this.playSound(this.jumpSound);
         }
@@ -270,7 +255,7 @@ export default class RobotClass extends EntityClass
         if (fallY>0) {
             if (this.standOnEntity!==null) {
                 if (this.standOnEntity.stompable) this.standOnEntity.die();
-                this.inJumpCameraPause=this.platformCameraJumpPause;
+                this.inJumpCameraPause=true;
                 if (this.standOnEntity.stompBounceHeight!==0) {
                     this.movement.y=this.standOnEntity.stompBounceHeight;
                     this.playSound(this.standOnEntity.stompSound);
@@ -337,12 +322,12 @@ export default class RobotClass extends EntityClass
         
         if (cameraDiff<0) {
             if (!this.inJumpCameraPause) {
-                this.currentCameraY-=(cameraDiff*this.platformCameraYUpMoveFactor);
+                this.currentCameraY-=(cameraDiff*0.2);
                 if (this.currentCameraY>this.position.y) this.currentCameraY=this.position.y;
             }
         }
         else {
-            this.currentCameraY-=(cameraDiff*this.platformCameraYDownMoveFactor);
+            this.currentCameraY-=(cameraDiff*0.3);
             if (this.currentCameraY<this.position.y) this.currentCameraY=this.position.y;
         }
 
