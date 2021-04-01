@@ -1,5 +1,7 @@
 import ProjectClass from '../../../code/main/project.js';
 import KillClass from '../cubes/kill.js';
+import FlashClass from '../effects/flash.js';
+import WarpClass from '../effects/warp.js';
 import StarClass from '../entities/star.js';
 import RobotClass from '../entities/robot.js';
 import PumpkinClass from '../entities/pumpkin.js';
@@ -10,6 +12,11 @@ export default class DemoClass extends ProjectClass
     mapModels(mapName,singlePlayer)
     {
         return(['pumpkin','robot','rocky','star']);
+    }
+    
+    mapBitmaps(mapName,singlePlayer)
+    {
+        return(['textures/particle_hit.png']);
     }
     
     mapSounds(mapName,singlePlayer)
@@ -29,6 +36,12 @@ export default class DemoClass extends ProjectClass
     
     mapEffect(mapName,effectName)
     {
+        switch (effectName) {
+            case 'flash':
+                return(FlashClass);
+            case 'warp':
+                return(WarpClass);
+        }
         return(null);
     }
 
