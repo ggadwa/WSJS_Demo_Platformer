@@ -10,7 +10,7 @@ export default class FlashClass extends EffectClass
         
         this.lifeTick=1400;
         
-        this.addBillboard("textures/particle_hit.png",this.DRAW_MODE_TRANSPARENT)
+        this.addBillboard('textures/particle_hit.png',this.DRAW_MODE_TRANSPARENT)
                 .addBillboardFrame(0,10000,10000,0,new ColorClass(1.0,1.0,0.0),0.3)
                 .addBillboardFrame(10,10000,10000,30,new ColorClass(1.0,0.7,0.0),1.0)
                 .addBillboardFrame(800,15000,15000,90,new ColorClass(1.0,0.6,0.0),1.0)
