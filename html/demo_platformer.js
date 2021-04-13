@@ -60,4 +60,8 @@ export default class DemoClass extends ProjectClass
         
         return(null);
     }
+    
+    mapStartup(mapName)
+    {
+    }
 }
