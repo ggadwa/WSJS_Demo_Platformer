@@ -20,13 +20,11 @@ export default class FlashClass extends EffectClass
         this.startSound={"name":"teleport","rate":1.0,"randomRateAdd":0,"distance":50000,"loopStart":0,"loopEnd":0,"loop":false};
     }
     
-    initialize()
+    ready()
     {
-        if (!super.initialize()) return(false);
+        super.ready();
         
         this.playSound(this.startSound);
-        
-        return(true);
     }
 
 }
