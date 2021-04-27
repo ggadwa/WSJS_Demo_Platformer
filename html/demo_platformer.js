@@ -9,59 +9,63 @@ import RockyClass from '../entities/rocky.js';
 
 export default class DemoClass extends ProjectClass
 {
-    mapModels(mapName,singlePlayer)
+    initialize()
     {
-        return(['pumpkin','robot','rocky','star']);
-    }
-    
-    mapBitmaps(mapName,singlePlayer)
-    {
-        return(['textures/particle_hit.png']);
-    }
-    
-    mapSounds(mapName,singlePlayer)
-    {
-        return(['chime','monster_attack','pickup','pumpkin_splat','robot_die','robot_hit','robot_jump','robot_land','rock_hit','teleport']);
-    }
-    
-    mapCube(mapName,cubeName)
-    {
-        switch (cubeName) {
-            case 'kill':
-                return(KillClass);
-        }
+        super.initialize();
         
-        return(null);
-    }
-    
-    mapEffect(mapName,effectName)
-    {
-        switch (effectName) {
-            case 'flash':
-                return(FlashClass);
-            case 'warp':
-                return(WarpClass);
-        }
-        return(null);
-    }
-
-    mapEntity(mapName,entityName)
-    {
-        switch (entityName) {
-            case 'star':
-                return(StarClass);
-            case 'robot':
-                return(RobotClass);
-            case 'pumpkin':
-                return(PumpkinClass);
-            case 'rocky':
-                return(RockyClass);
-        }
+            // project effects
+            
+        this.addEffectClass('flash',FlashClass);
+        this.addEffectClass('warp',WarpClass);
         
-        return(null);
+            // project entities
+            
+        this.addEntityClass('star',StarClass);
+        this.addEntityClass('robot',RobotClass);
+        this.addEntityClass('pumpkin',PumpkinClass);
+        this.addEntityClass('rocky',RockyClass);
+        
+            // project cubes
+            
+        this.addCubeClass('kill',KillClass);
+        
+            // models
+            
+        this.addCommonModel('pumpkin');
+        this.addCommonModel('robot');
+        this.addCommonModel('rocky');
+        this.addCommonModel('star');
+        
+            // bitmaps
+            
+        this.addCommonBitmap('textures/particle_hit.png');
+           
+           // sounds
+           
+        this.addCommonSound('chime');
+        this.addCommonSound('monster_attack');
+        this.addCommonSound('pickup');
+        this.addCommonSound('pumpkin_splat');
+        this.addCommonSound('robot_die');
+        this.addCommonSound('robot_hit');
+        this.addCommonSound('robot_jump');
+        this.addCommonSound('robot_land');
+        this.addCommonSound('rock_hit');
+        this.addCommonSound('teleport');
+        
+            // sequences
+            
+        this.addSequence('warp_in');
+        this.addSequence('warp_out');
+        this.addSequence('lost');
     }
     
+        //
+        // overrides
+        //
+        
     mapStartup(mapName)
     {
+        this.startSequence('warp_in');
     }
 }

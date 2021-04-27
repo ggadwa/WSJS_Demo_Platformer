@@ -3,9 +3,9 @@ import EntityClass from '../../../code/game/entity.js';
 
 export default class RobotClass extends EntityClass
 {
-    constructor(core,name,jsonName,position,angle,data,mapSpawn,spawnedBy,heldBy,show)
+    constructor(core,name,position,angle,data,mapSpawn,spawnedBy,heldBy,show)
     {
-        super(core,name,null,position,angle,data,mapSpawn,spawnedBy,heldBy,show);
+        super(core,name,position,angle,data,mapSpawn,spawnedBy,heldBy,show);
         
             // this is the player entity
             
@@ -115,7 +115,7 @@ export default class RobotClass extends EntityClass
         this.startAnimation(this.dieAnimation);
         this.queueAnimationStop();
         
-        this.core.game.lost(this);
+        this.startSequence('lost');
     }
     
     damage(damage)
@@ -157,7 +157,7 @@ export default class RobotClass extends EntityClass
         
             // going into win
             
-        if (this.collectItemCount>=winCount) this.core.game.won(this);
+        if (this.collectItemCount>=winCount) this.startSequence('warp_out');
     }
         
     run()

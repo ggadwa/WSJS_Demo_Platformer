@@ -19,18 +19,6 @@
             "multiplayerDefaultCharacter":null,
             "multiplayerMessageText":null,
             "multiplayerMessageWaitTick":0,
-            "startActions":
-                [
-                    {"action":"sequence","name":"warp_in"}
-                ],
-            "wonActions":
-                [
-                    {"action":"sequence","name":"warp_out"}
-                ],
-            "lostActions":
-                [
-                    {"action":"sequence","name":"lost"}
-                ],
             "touchStickSize":256,
             "touchButtonSize":48,
             "touchMenuPosition":[0.01,0.92],
@@ -54,15 +42,5 @@
         },
     "characters":
         [
-        ],
-    "entities":
-        [
-        ],
-    "effects":
-        [
-        ],
-    "sequences":
-        [
-            "warp_in","warp_out","lost"
         ]
 }
