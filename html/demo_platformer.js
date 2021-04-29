@@ -1,4 +1,6 @@
 import ProjectClass from '../../../code/main/project.js';
+import PointClass from '../../../code/utility/point.js';
+import ColorClass from '../../../code/utility/color.js';
 import KillClass from '../cubes/kill.js';
 import FlashClass from '../effects/flash.js';
 import WarpClass from '../effects/warp.js';
@@ -58,6 +60,16 @@ export default class DemoClass extends ProjectClass
         this.addSequence('warp_in');
         this.addSequence('warp_out');
         this.addSequence('lost');
+        
+            // interface
+            
+        this.addInterfaceElement('health_background','textures/health_background.png',128,128,this.POSITION_BOTTOM_RIGHT,new PointClass(-133,-133),new ColorClass(1.0,1.0,1.0),1.0,true);
+        this.addInterfaceElement('health_4','textures/health_4.png',128,128,this.POSITION_BOTTOM_RIGHT,new PointClass(-133,-133),new ColorClass(1.0,1.0,1.0),1.0,true);
+        this.addInterfaceElement('health_3','textures/health_3.png',128,128,this.POSITION_BOTTOM_RIGHT,new PointClass(-133,-133),new ColorClass(1.0,1.0,1.0),1.0,false);
+        this.addInterfaceElement('health_2','textures/health_2.png',128,128,this.POSITION_BOTTOM_RIGHT,new PointClass(-133,-133),new ColorClass(1.0,1.0,1.0),1.0,false);
+        this.addInterfaceElement('health_1','textures/health_1.png',128,128,this.POSITION_BOTTOM_RIGHT,new PointClass(-133,-133),new ColorClass(1.0,1.0,1.0),1.0,false);
+        
+        this.addInterfaceCount('stars','textures/star.png',10,32,32,this.POSITION_TOP_LEFT,new PointClass(5,5),new PointClass(0,32),new ColorClass(1.0,1.0,1.0),1.0,new ColorClass(0.8,0.8,0.8),0.5,true);            
     }
     
         //
