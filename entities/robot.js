@@ -131,7 +131,7 @@ export default class RobotClass extends EntityClass
             // take damage
             
         this.health-=damage;
-        this.pulseElement('interfaceHealthBackground',500,5);
+        this.pulseElement('health_background',500,5);
         
         if (this.health>0) {
             this.interuptAnimation(this.hurtAnimation);

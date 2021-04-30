@@ -63,13 +63,22 @@ export default class DemoClass extends ProjectClass
         
             // interface
             
-        this.addInterfaceElement('health_background','textures/health_background.png',128,128,this.POSITION_BOTTOM_RIGHT,new PointClass(-133,-133),new ColorClass(1.0,1.0,1.0),1.0,true);
-        this.addInterfaceElement('health_4','textures/health_4.png',128,128,this.POSITION_BOTTOM_RIGHT,new PointClass(-133,-133),new ColorClass(1.0,1.0,1.0),1.0,true);
-        this.addInterfaceElement('health_3','textures/health_3.png',128,128,this.POSITION_BOTTOM_RIGHT,new PointClass(-133,-133),new ColorClass(1.0,1.0,1.0),1.0,false);
-        this.addInterfaceElement('health_2','textures/health_2.png',128,128,this.POSITION_BOTTOM_RIGHT,new PointClass(-133,-133),new ColorClass(1.0,1.0,1.0),1.0,false);
-        this.addInterfaceElement('health_1','textures/health_1.png',128,128,this.POSITION_BOTTOM_RIGHT,new PointClass(-133,-133),new ColorClass(1.0,1.0,1.0),1.0,false);
+        this.addInterfaceElement('health_background','textures/health_background.png',128,128,this.POSITION_BOTTOM_RIGHT,new PointClass(-133,-133,0),new ColorClass(1.0,1.0,1.0),1.0,true);
+        this.addInterfaceElement('health_4','textures/health_4.png',128,128,this.POSITION_BOTTOM_RIGHT,new PointClass(-133,-133,0),new ColorClass(1.0,1.0,1.0),1.0,true);
+        this.addInterfaceElement('health_3','textures/health_3.png',128,128,this.POSITION_BOTTOM_RIGHT,new PointClass(-133,-133,0),new ColorClass(1.0,1.0,1.0),1.0,false);
+        this.addInterfaceElement('health_2','textures/health_2.png',128,128,this.POSITION_BOTTOM_RIGHT,new PointClass(-133,-133,0),new ColorClass(1.0,1.0,1.0),1.0,false);
+        this.addInterfaceElement('health_1','textures/health_1.png',128,128,this.POSITION_BOTTOM_RIGHT,new PointClass(-133,-133,0),new ColorClass(1.0,1.0,1.0),1.0,false);
         
-        this.addInterfaceCount('stars','textures/star.png',10,32,32,this.POSITION_TOP_LEFT,new PointClass(5,5),new PointClass(0,32),new ColorClass(1.0,1.0,1.0),1.0,new ColorClass(0.8,0.8,0.8),0.5,true);            
+        this.addInterfaceCount('stars','textures/star.png',10,32,32,this.POSITION_TOP_LEFT,new PointClass(5,5,0),new PointClass(0,32,0),new ColorClass(1.0,1.0,1.0),1.0,new ColorClass(0.8,0.8,0.8),0.5,true);            
+        
+            // title setup
+            
+        this.setTitleConfig('Arial','click','select');
+        this.setTitleMenu(80,82,new ColorClass(1.0,1.0,0.0),new ColorClass(1.0,0.5,0.0),this.MENU_X_ALIGN_RIGHT,this.MENU_Y_ALIGN_BOTTOM);
+        this.setTitlePlayButton('Play',true);
+        this.setTitleMultiplayerButton('',false);
+        this.setTitleSetupButton('Setup',true);
+        this.setTitleQuitButton('Quit',true);
     }
     
         //
