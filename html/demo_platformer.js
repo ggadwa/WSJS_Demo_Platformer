@@ -79,6 +79,14 @@ export default class DemoClass extends ProjectClass
         this.setTitleMultiplayerButton('',false);
         this.setTitleSetupButton('Setup',true);
         this.setTitleQuitButton('Quit',true);
+        
+            // touch setup
+            
+        this.setTouchControls(256,48,this.POSITION_BOTTOM_LEFT,new PointClass(5,53,0),false,true);
+        
+            // multiplayer setup
+            
+        this.setMultiplayerUI(null,null,0);
     }
     
         //

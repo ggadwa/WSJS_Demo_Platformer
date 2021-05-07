@@ -2,27 +2,5 @@
     "developer":true,
     "startMap":"platformer",
     "multiplayerGames":null,
-    "multiplayerMaps":null,
-    "title":
-        {
-            "font":"Arial",
-            "clickSound":"click",
-            "selectSound":"select",
-            "menu":{"textSize":80,"highlightTextSize":82,"color":{"r":1,"g":1,"b":0},"highlightColor":{"r":1,"g":0.5,"b":0},"alignX":"right","alignY":"bottom"},
-            "playButton":{"title":"Play","show":true},
-            "multiplayerButton":{"title":"","show":false},
-            "setupButton":{"title":"Setup","show":true},
-            "quitButton":{"title":"Quit","show":true}
-        },
-    "config":
-        {
-            "multiplayerDefaultCharacter":null,
-            "multiplayerMessageText":null,
-            "multiplayerMessageWaitTick":0,
-            "touchStickSize":256,
-            "touchButtonSize":48,
-            "touchMenuPosition":[0.01,0.92],
-            "touchShowLeftStick":true,
-            "touchShowRightStick":false
-        }
+    "multiplayerMaps":null
 }
