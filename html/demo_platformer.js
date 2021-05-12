@@ -87,6 +87,14 @@ export default class DemoClass extends ProjectClass
             // multiplayer setup
             
         this.setMultiplayerUI(null,null,0);
+        
+            // starting map
+            
+        this.setStartMap('platformer');
+        
+            // developer setup
+            
+        this.setDeveloper(true);
     }
     
         //
