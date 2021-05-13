@@ -1,5 +1,7 @@
 import PointClass from '../../../code/utility/point.js';
 import EntityClass from '../../../code/game/entity.js';
+import AnimationDefClass from '../../../code/model/animation_def.js';
+import SoundDefClass from '../../../code/sound/sound_def.js';
 
 export default class RockyClass extends EntityClass
 {
@@ -44,14 +46,14 @@ export default class RockyClass extends EntityClass
         
             // animations
         
-        this.idleAnimation={"startFrame":910,"endFrame":1110,"actionFrame":0,"meshes":null};
-        this.walkAnimation={"startFrame":80,"endFrame":110,"actionFrame":0,"meshes":null};
-        this.hitAnimation={"startFrame":2870,"endFrame":2890,"actionFrame":2880,"meshes":null};
+        this.idleAnimation=new AnimationDefClass(910,1110,0);
+        this.walkAnimation=new AnimationDefClass(80,110,0);
+        this.hitAnimation=new AnimationDefClass(2870,2890,2880);
         
             // sounds
             
-        this.stompSound={"name":"rock_hit","rate":1,"randomRateAdd":0.1,"distance":30000,"loopStart":0,"loopEnd":0,"loop":false};   // called by player
-        this.meleeSound={"name":"monster_attack","rate":1,"randomRateAdd":0.5,"distance":30000,"loopStart":0,"loopEnd":0,"loop":false};
+        this.stompSound=new SoundDefClass('rock_hit',1,0.1,30000,0,0,false);
+        this.meleeSound=new SoundDefClass('monster_attack',1,0.5,30000,0,0,false);
 
             // pre-allocates
             
@@ -97,14 +99,15 @@ export default class RockyClass extends EntityClass
         
     run()
     {
-        let player=this.core.game.map.entityList.getPlayer();
+        let timestamp=this.getTimestamp();
+        let player=this.getPlayer();
         
         super.run();
         
             // any waiting melee
                     
         if (this.meleeNextTick!==0) {
-            if (this.core.game.timestamp>=this.meleeNextTick) {
+            if (timestamp>=this.meleeNextTick) {
                 this.meleeNextTick=0;
                 if (this.isMeleeOK(player)) player.meleeHit(1,(Math.sign(player.position.x-this.position.x)*1100),0.9);
                 this.playSound(this.meleeSound);
@@ -125,7 +128,7 @@ export default class RockyClass extends EntityClass
             // frozen in a finishing animation
             
         if (this.animationFinishTick!==0) {
-            if (this.core.game.timestamp>this.animationFinishTick) this.animationFinishTick=0;
+            if (timestamp>this.animationFinishTick) this.animationFinishTick=0;
             this.movement.y=this.moveInMapY(this.movement,1.0,false);
             return;
         }
@@ -146,7 +149,7 @@ export default class RockyClass extends EntityClass
                 this.queueAnimation(this.walkAnimation);
 
                 this.meleeNextTick=this.getAnimationFinishTimestampFromFrame(this.hitAnimation.actionFrame,this.hitAnimation);
-                this.animationFinishTick=this.core.game.timestamp+this.getAnimationTickCount(this.hitAnimation);
+                this.animationFinishTick=timestamp+this.getAnimationTickCount(this.hitAnimation);
             }
         }
         

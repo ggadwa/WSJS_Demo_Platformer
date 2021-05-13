@@ -1,6 +1,7 @@
 import PointClass from '../../../code/utility/point.js';
 import ColorClass from '../../../code/utility/color.js';
 import EffectClass from '../../../code/game/effect.js';
+import SoundDefClass from '../../../code/sound/sound_def.js';
 
 export default class FlashClass extends EffectClass
 {
@@ -17,7 +18,7 @@ export default class FlashClass extends EffectClass
                 .addBillboardFrame(800,15000,25000,-5,new ColorClass(0.7,0.7,0.9),1.0)
                 .addBillboardFrame(1500,500,500,0,new ColorClass(0.5,0.5,0.85),0.1);
 
-        this.startSound={"name":"teleport","rate":1.0,"randomRateAdd":0,"distance":50000,"loopStart":0,"loopEnd":0,"loop":false};
+        this.startSound=new SoundDefClass('teleport',1.0,0,50000,0,0,false);
     }
     
     ready()

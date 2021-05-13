@@ -1,5 +1,7 @@
 import PointClass from '../../../code/utility/point.js';
 import EntityClass from '../../../code/game/entity.js';
+import AnimationDefClass from '../../../code/model/animation_def.js';
+import SoundDefClass from '../../../code/sound/sound_def.js';
 
 export default class StarClass extends EntityClass
 {
@@ -34,7 +36,7 @@ export default class StarClass extends EntityClass
             
         this.originalY=0;
         
-        this.pickupSound={"name":"pickup","rate":1.0,"randomRateAdd":0.0,"distance":50000,"loopStart":0,"loopEnd":0,"loop":false};
+        this.pickupSound=new SoundDefClass('pickup',1.0,0.0,50000,0,0,false);
         
         Object.seal(this);
     }
@@ -56,8 +58,8 @@ export default class StarClass extends EntityClass
         
             // animation
 
-        this.position.y=this.originalY+this.core.game.getPeriodicCos(5000,200);
-        this.angle.y=this.core.game.getPeriodicLinear(5000,360);
+        this.position.y=this.originalY+this.getPeriodicCos(5000,200);
+        this.angle.y=this.getPeriodicLinear(5000,360);
         
             // check for collisions from
             // entities that can add win star

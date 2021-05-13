@@ -1,5 +1,7 @@
 import PointClass from '../../../code/utility/point.js';
 import EntityClass from '../../../code/game/entity.js';
+import AnimationDefClass from '../../../code/model/animation_def.js';
+import SoundDefClass from '../../../code/sound/sound_def.js';
 
 export default class PumpkinClass extends EntityClass
 {
@@ -35,16 +37,16 @@ export default class PumpkinClass extends EntityClass
         
             // animations
         
-        this.idleAnimation={"startFrame":910,"endFrame":1110,"actionFrame":0,"meshes":null};
-        this.walkAnimation={"startFrame":80,"endFrame":110,"actionFrame":0,"meshes":null};
-        this.hitAnimation={"startFrame":2710,"endFrame":2730,"actionFrame":2720,"meshes":null};
-        this.dieAnimation={"startFrame":2750,"endFrame":2790,"actionFrame":2755,"meshes":null};
+        this.idleAnimation=new AnimationDefClass(910,1110,0);
+        this.walkAnimation=new AnimationDefClass(80,110,0);
+        this.hitAnimation=new AnimationDefClass(2710,2730,2720);
+        this.dieAnimation=new AnimationDefClass(2750,2790,2755);
             
             // sounds
         
         this.stompSound=null;   // called by player
-        this.meleeSound={"name":"monster_attack","rate":1,"randomRateAdd":0.5,"distance":30000,"loopStart":0,"loopEnd":0,"loop":false};
-        this.dieSound={"name":"pumpkin_splat","rate":1,"randomRateAdd":0.2,"distance":30000,"loopStart":0,"loopEnd":0,"loop":false};
+        this.meleeSound=new SoundDefClass('monster_attack',1,0.5,30000,0,0,false);
+        this.dieSound=new SoundDefClass('pumpkin_splat',1,0.2,30000,0,0,false);
         
             // variables
             
@@ -99,7 +101,7 @@ export default class PumpkinClass extends EntityClass
         this.queueAnimationStop();
         
         this.effectLaunchTick=this.getAnimationFinishTimestampFromFrame(this.dieAnimation.actionFrame,this.dieAnimation);
-        this.animationFinishTick=this.core.game.timestamp+this.getAnimationTickCount(this.dieAnimation);
+        this.animationFinishTick=this.getTimestamp()+this.getAnimationTickCount(this.dieAnimation);
         
         this.playSound(this.dieSound);
     }
@@ -124,7 +126,8 @@ export default class PumpkinClass extends EntityClass
         
     run()
     {
-        let player=this.core.game.map.entityList.getPlayer();
+        let timestamp=this.getTimestamp();
+        let player=this.getPlayer();
         
         super.run();
         
@@ -133,12 +136,12 @@ export default class PumpkinClass extends EntityClass
         if (this.dead) {
             if (this.animationFinishTick===0) return;
             
-            if ((this.core.game.timestamp>this.effectLaunchTick) && (this.effectLaunchTick!==0)) {
+            if ((timestamp>this.effectLaunchTick) && (this.effectLaunchTick!==0)) {
                 this.effectLaunchTick=0;
                 this.addEffect(this,'flash',this.position,null,true);
             }
             
-            if (this.core.game.timestamp>this.animationFinishTick) {
+            if (timestamp>this.animationFinishTick) {
                 this.animationFinishTick=0;
                 this.show=false;
             }
@@ -151,7 +154,7 @@ export default class PumpkinClass extends EntityClass
             // any waiting melee
                     
         if (this.meleeNextTick!==0) {
-            if (this.core.game.timestamp>=this.meleeNextTick) {
+            if (timestamp>=this.meleeNextTick) {
                 this.meleeNextTick=0;
                 if (this.isMeleeOK(player)) player.meleeHit(1,0,0);
                 this.playSound(this.meleeSound);
@@ -172,7 +175,7 @@ export default class PumpkinClass extends EntityClass
             // frozen in a finishing animation
             
         if (this.animationFinishTick!==0) {
-            if (this.core.game.timestamp>this.animationFinishTick) this.animationFinishTick=0;
+            if (timestamp>this.animationFinishTick) this.animationFinishTick=0;
             this.movement.y=this.moveInMapY(this.movement,1.0,false);
             return;
         }
@@ -180,14 +183,14 @@ export default class PumpkinClass extends EntityClass
             // jumping
             
         if ((this.standOnMeshIdx!==-1) || (this.standOnEntity!==null)) {
-            if (this.core.game.timestamp>this.nextJumpTick) {
-                this.nextJumpTick=this.core.game.timestamp+(2000+Math.trunc(Math.random()*100));
+            if (timestamp>this.nextJumpTick) {
+                this.nextJumpTick=timestamp+(2000+Math.trunc(Math.random()*100));
 
                 this.movement.y=200;
             }
         }
         else {
-            this.nextJumpTick=this.core.game.timestamp+(2000+Math.trunc(Math.random()*100));
+            this.nextJumpTick=timestamp+(2000+Math.trunc(Math.random()*100));
         }
         
             // run the movement
@@ -206,7 +209,7 @@ export default class PumpkinClass extends EntityClass
                 this.queueAnimation(this.walkAnimation);
 
                 this.meleeNextTick=this.getAnimationFinishTimestampFromFrame(this.hitAnimation.actionFrame,this.hitAnimation);
-                this.animationFinishTick=this.core.game.timestamp+this.getAnimationTickCount(this.hitAnimation);
+                this.animationFinishTick=timestamp+this.getAnimationTickCount(this.hitAnimation);
             }
         }
         

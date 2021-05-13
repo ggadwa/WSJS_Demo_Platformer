@@ -1,5 +1,7 @@
 import PointClass from '../../../code/utility/point.js';
 import EntityClass from '../../../code/game/entity.js';
+import AnimationDefClass from '../../../code/model/animation_def.js';
+import SoundDefClass from '../../../code/sound/sound_def.js';
 
 export default class RobotClass extends EntityClass
 {
@@ -52,19 +54,19 @@ export default class RobotClass extends EntityClass
             
         this.interfaceHealthBitmapList=["health_1","health_2","health_3","health_4"];
         
-        this.idleAnimation={"startFrame":1830,"endFrame":1930,"actionFrame":0,"meshes":null};
-        this.walkAnimation={"startFrame":80,"endFrame":110,"actionFrame":0,"meshes":null};
-        this.runAnimation={"startFrame":290,"endFrame":310,"actionFrame":0,"meshes":null};
-        this.jumpAnimation={"startFrame":627,"endFrame":628,"actionFrame":0,"meshes":null};
-        this.fallAnimation={"startFrame":5410,"endFrame":5500,"actionFrame":0,"meshes":null};
-        this.hurtAnimation={"startFrame":630,"endFrame":640,"actionFrame":0,"meshes":null};
-        this.shovedAnimation={"startFrame":640,"endFrame":655,"actionFrame":0,"meshes":null};
-        this.dieAnimation={"startFrame":720,"endFrame":765,"actionFrame":0,"meshes":null};
+        this.idleAnimation=new AnimationDefClass(1830,1930,0);
+        this.walkAnimation=new AnimationDefClass(80,110,0);
+        this.runAnimation=new AnimationDefClass(290,310,0);
+        this.jumpAnimation=new AnimationDefClass(627,628,0);
+        this.fallAnimation=new AnimationDefClass(5410,5500,0);
+        this.hurtAnimation=new AnimationDefClass(630,640,0);
+        this.shovedAnimation=new AnimationDefClass(640,655,0);
+        this.dieAnimation=new AnimationDefClass(720,765,0);
         
-        this.jumpSound={"name":"robot_jump","rate":0.1,"randomRateAdd":1.0,"distance":30000,"loopStart":0,"loopEnd":0,"loop":false};
-        this.landSound={"name":"robot_land","rate":0.2,"randomRateAdd":1.0,"distance":30000,"loopStart":0,"loopEnd":0,"loop":false};
-        this.hurtSound={"name":"robot_hit","rate":0.2,"randomRateAdd":1.0,"distance":50000,"loopStart":0,"loopEnd":0,"loop":false};
-        this.dieSound={"name":"robot_die","rate":1,"randomRateAdd":0,"distance":30000,"loopStart":0,"loopEnd":0,"loop":false};
+        this.jumpSound=new SoundDefClass('robot_jump',0.1,1.0,30000,0,0,false);
+        this.landSound=new SoundDefClass('robot_land',0.2,1.0,30000,0,0,false);
+        this.hurtSound=new SoundDefClass('robot_hit',0.2,1.0,50000,0,0,false);
+        this.dieSound=new SoundDefClass('robot_die',1,0,30000,0,0,false);
 
             // pre-allocates
             
@@ -135,7 +137,7 @@ export default class RobotClass extends EntityClass
         
         if (this.health>0) {
             this.interuptAnimation(this.hurtAnimation);
-            this.animationFinishTick=this.core.game.timestamp+this.getAnimationTickCount(this.hurtAnimation);
+            this.animationFinishTick=this.getTimestamp()+this.getAnimationTickCount(this.hurtAnimation);
             this.playSound(this.hurtSound);
         }
         else {
@@ -178,7 +180,7 @@ export default class RobotClass extends EntityClass
         
             // freezes
             
-        if (this.core.game.freezePlayer) return;
+        if (this.inFreezePlayer()) return;
         
             // dead, can only fall
             
@@ -251,7 +253,7 @@ export default class RobotClass extends EntityClass
         
             // falling and bouncing
             
-        fallY=this.gravity-this.core.game.map.gravityMinValue;
+        fallY=this.gravity-this.getMapGravityMinValue();
         if (fallY>0) {
             if (this.standOnEntity!==null) {
                 if (this.standOnEntity.stompable) this.standOnEntity.die();
@@ -285,7 +287,7 @@ export default class RobotClass extends EntityClass
             // animation changes
             
         if (this.animationFinishTick!==0) {
-            if (this.core.game.timestamp>this.animationFinishTick) this.animationFinishTick=0;
+            if (this.getTimestamp()>this.animationFinishTick) this.animationFinishTick=0;
         }
         else {
             if (this.shoveSpeed!==0) {
